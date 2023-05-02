@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Video Call Demo</title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+    <h1>
+        Error handling inside event listeners
+    </h1>
+
+    <p>App id : <input type="text" id="app-id"></p>
+    <p>Channel : <input type="text" id="channel" value="test"></p>
+    <p>Token : <input type="text" id="token" placeholder="(optional)" value=""></p>
+    <button id="start">Start</button>
+    <button id="stop" disabled>Stop</button>
+    <button id="set-listener" disabled>listener</button>
+    <span>How to reproduce:</span>
+    <ol>
+        <li>open the webpage in two tabs/devices</li>
+        <li>start the call on both</li>
+        <li>click the listener button to setup the event listener</li>
+        <li>after a couple seconds, disconnect the internet in one tab</li>
+        <li>after a couple seconds, reconnect the internet</li>
+        <li>the user reconnects and the call works fine</li>
+        <li>wait for 3-5 minutes</li>
+        <li>the user is removed from the channel without a reason</li>
+    </ol>
+    </p>
+    <h4>My Feed :</h4>
+    <div id="me"></div>
+
+    <h4>Remote Feeds :</h4>
+    <div id="remote-container">
+
+    </div>
+
+    <script src="https://download.agora.io/sdk/release/AgoraRTC_N-4.15.0.js"></script>
+    <script src="scripts/script.js"></script>
+</body>
+
+</html>
